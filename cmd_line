@@ -1,0 +1,1 @@
+genhtml coverage/filtered_lcov.info --output-directory coverage/html_blocs --title 'Blocs Coverage' --show-details --legend
