@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2025-06-26 11:16:20</td>
+            <td class="headerValue">2025-07-03 17:28:12</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">-</td>
@@ -75,9 +75,9 @@
 <span id="L5"><span class="lineNum">       5</span>              : import 'package:debat/model/main/create_skill_card_battle_success_model.dart';</span>
 <span id="L6"><span class="lineNum">       6</span>              : import 'package:debat/model/main/skill_card_listing_model.dart';</span>
 <span id="L7"><span class="lineNum">       7</span>              : import 'package:debat/translations/locale_keys.g.dart';</span>
-<span id="L8"><span class="lineNum">       8</span>              : import 'package:easy_localization/easy_localization.dart';</span>
-<span id="L9"><span class="lineNum">       9</span>              : import 'package:flutter/material.dart';</span>
-<span id="L10"><span class="lineNum">      10</span>              : import 'package:meta/meta.dart';</span>
+<span id="L8"><span class="lineNum">       8</span>              : import 'package:debat/utils/functions_utils.dart';</span>
+<span id="L9"><span class="lineNum">       9</span>              : import 'package:easy_localization/easy_localization.dart';</span>
+<span id="L10"><span class="lineNum">      10</span>              : import 'package:flutter/material.dart';</span>
 <span id="L11"><span class="lineNum">      11</span>              : import 'package:equatable/equatable.dart';</span>
 <span id="L12"><span class="lineNum">      12</span>              : </span>
 <span id="L13"><span class="lineNum">      13</span>              : import '../../../repository/api_repository.dart';</span>
@@ -271,7 +271,7 @@
 <span id="L201"><span class="lineNum">     201</span>              :   }) async {</span>
 <span id="L202"><span class="lineNum">     202</span>              :     try {</span>
 <span id="L203"><span class="lineNum">     203</span> <span class="tlaGNC">           1 :       emit(const LoadingState());</span></span>
-<span id="L204"><span class="lineNum">     204</span> <span class="tlaGNC">           4 :       debugPrint(&quot;event.data: ${event.data}&quot;);</span></span>
+<span id="L204"><span class="lineNum">     204</span> <span class="tlaGNC">           3 :       debugLogText(&quot;event.data: ${event.data}&quot;);</span></span>
 <span id="L205"><span class="lineNum">     205</span> <span class="tlaGNC">           2 :       final response = await apiRepository.createSkillCardBattle(</span></span>
 <span id="L206"><span class="lineNum">     206</span> <span class="tlaGNC">           1 :         bodyData: event.data,</span></span>
 <span id="L207"><span class="lineNum">     207</span>              :       );</span>
@@ -282,7 +282,7 @@
 <span id="L212"><span class="lineNum">     212</span> <span class="tlaGNC">           1 :         final isSuccess = response.item3;</span></span>
 <span id="L213"><span class="lineNum">     213</span>              : </span>
 <span id="L214"><span class="lineNum">     214</span>              :         if (isSuccess) {</span>
-<span id="L215"><span class="lineNum">     215</span> <span class="tlaGNC">           2 :           debugPrint(</span></span>
+<span id="L215"><span class="lineNum">     215</span> <span class="tlaGNC">           1 :           debugLogText(</span></span>
 <span id="L216"><span class="lineNum">     216</span> <span class="tlaGNC">           2 :               &quot;createSkillCardBattleSuccessModel: ${createSkillCardBattleSuccessModel?.toJson()}&quot;);</span></span>
 <span id="L217"><span class="lineNum">     217</span>              :           if (createSkillCardBattleSuccessModel != null) {</span>
 <span id="L218"><span class="lineNum">     218</span> <span class="tlaGNC">           2 :             emit(CreateSkillBattleSuccessState(</span></span>
@@ -293,7 +293,7 @@
 <span id="L223"><span class="lineNum">     223</span>              : </span>
 <span id="L224"><span class="lineNum">     224</span> <span class="tlaGNC">           2 :           onRefresh(true);</span></span>
 <span id="L225"><span class="lineNum">     225</span>              :         } else {</span>
-<span id="L226"><span class="lineNum">     226</span> <span class="tlaGNC">           4 :           debugPrint(&quot;errorModel: ${errorModel?.message}&quot;);</span></span>
+<span id="L226"><span class="lineNum">     226</span> <span class="tlaGNC">           3 :           debugLogText(&quot;errorModel: ${errorModel?.message}&quot;);</span></span>
 <span id="L227"><span class="lineNum">     227</span> <span class="tlaGNC">           2 :           emit(CreateSkillBattleErrorState(</span></span>
 <span id="L228"><span class="lineNum">     228</span>              :             errorModel: errorModel!,</span>
 <span id="L229"><span class="lineNum">     229</span>              :           ));</span>
@@ -307,7 +307,7 @@
 <span id="L237"><span class="lineNum">     237</span>              :         ));</span>
 <span id="L238"><span class="lineNum">     238</span>              :       }</span>
 <span id="L239"><span class="lineNum">     239</span>              :     } catch (e) {</span>
-<span id="L240"><span class="lineNum">     240</span> <span class="tlaGNC">           3 :       debugPrint(&quot;error: $e&quot;);</span></span>
+<span id="L240"><span class="lineNum">     240</span> <span class="tlaGNC">           2 :       debugLogText(&quot;error: $e&quot;);</span></span>
 <span id="L241"><span class="lineNum">     241</span> <span class="tlaGNC">           2 :       emit(CreateSkillBattleErrorState(</span></span>
 <span id="L242"><span class="lineNum">     242</span> <span class="tlaGNC">           1 :         errorModel: ErrorModel(</span></span>
 <span id="L243"><span class="lineNum">     243</span>              :           status: false,</span>
